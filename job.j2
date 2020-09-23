@@ -1,0 +1,12 @@
+
+
+job('job_dsl_created'){
+	description('this is to update the description of the job created')
+	
+	parameters{
+	    stringParam('Planet', defaultValue = 'world', description = "this is the world')
+	    BooleanParam('FLAG', true)
+	    choiceParam('OPTION', ['option 1 (default)', 'option 2', 'option 4'])
+
+	}
+}
