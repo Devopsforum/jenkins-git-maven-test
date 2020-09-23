@@ -10,12 +10,15 @@ job('job_dsl_created'){
 	    git('https://github.com/Devopsforum/jenkins-git-maven-test.git', 'master')
 	}
 	triggers{
-	    cron('* * * * *')
+	    cron('H 5 * * 7')
 	}
 	steps{
 	  shell("""echo 'Hello World'
 		   echo 'How are you'
 		"""
 	)
+	publishers{
+	     mailer('yvs@devopsforum.com', true, true)
+	}
      } 
 }
