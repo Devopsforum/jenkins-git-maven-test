@@ -11,4 +11,7 @@ job('job_dsl_created'){
 	scm{
 	    git('https://github.com/Devopsforum/jenkins-git-maven-test.git', 'master')
 	}
+	triggers{
+	    cron('* * * * *')
+	}
 }
