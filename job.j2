@@ -7,6 +7,8 @@ job('job_dsl_created'){
 	    stringParam('Planet', defaultValue = 'world', description = "this is the world')
 	    BooleanParam('FLAG', true)
 	    choiceParam('OPTION', ['option 1 (default)', 'option 2', 'option 4'])
-
+	}
+	scm{
+	    git('https://github.com/Devopsforum/jenkins-git-maven-test.git', 'master')
 	}
 }
