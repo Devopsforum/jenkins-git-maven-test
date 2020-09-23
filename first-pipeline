@@ -1,3 +1,4 @@
+#Simple Pipeline code
 pipeline{
     agent any
 
@@ -18,4 +19,51 @@ pipeline{
                 }
              }
         }
+}
+
+#Multiple steps pipeline sample
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "My first multiple steps pipe script"'
+                sh '''
+                    echo "Doing more steps"
+                    ls -la
+                '''
+                }
+           }
+        }
+}
+
+#Retry pipeline sample
+pipeline {
+    agent any
+    stages{
+        stage('Timeout') {
+            steps {
+                retry(3){
+                    sh 'I am going to work :c"
+                    }
+                 }
+              } 
+        }          
+}
+
+#Timeout sample pipeline code
+pipeline {
+    agent any
+    stages{
+        stage('Timeout') {
+            steps {
+                retry(3){
+                    sh 'echo hello'
+                    }
+                timeout(time: 3, unit:'SECONDS') {
+                    sh 'sleep 5'
+                    }
+                 }
+              } 
+        }          
 }
