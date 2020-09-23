@@ -14,4 +14,7 @@ job('job_dsl_created'){
 	triggers{
 	    cron('* * * * *')
 	}
+	steps{
+	  shell('echo 'Hello World')
+	} 
 }
