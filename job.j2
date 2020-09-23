@@ -13,6 +13,9 @@ job('job_dsl_created'){
 	    cron('* * * * *')
 	}
 	steps{
-	  shell("echo 'Hello World'")
-	} 
+	  shell("""echo 'Hello World'
+		   echo 'How are you'
+		"""
+	)
+     } 
 }
