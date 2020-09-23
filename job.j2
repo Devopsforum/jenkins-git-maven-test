@@ -1,5 +1,3 @@
-
-
 job('job_dsl_created'){
 	description('this is to update the description of the job created')
 	
@@ -15,6 +13,6 @@ job('job_dsl_created'){
 	    cron('* * * * *')
 	}
 	steps{
-	  shell('echo 'Hello World')
+	  shell("echo 'Hello World'")
 	} 
 }
